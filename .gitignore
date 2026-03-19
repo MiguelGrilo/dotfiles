@@ -1,0 +1,9 @@
+# Ignorar ficheiros temporários e logs
+*.log
+*.swp
+.DS_Store
+
+# Neovim / LazyVim
+# Podes manter o lazy-lock.json se quiseres as mesmas versões de plugins, 
+# mas se preferires algo limpo, ignora-o:
+# nvim/.config/nvim/lazy-lock.json

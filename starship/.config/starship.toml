@@ -1,0 +1,103 @@
+# --- Configurações Gerais ---
+add_newline = false
+
+# O "format" define a ordem das coisas. 
+# Adicionei o $git_branch e $git_status para saberes sempre onde estás.
+format = """$username$directory$git_branch$git_status$python$nodejs$character"""
+
+[username]
+style_user = "cyan bold"
+style_root = "black bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@$hostname]($style): "
+style = "cyan bold"
+disabled = false
+
+[directory]
+style = "light_magenta"
+truncate_to_repo = false
+truncation_length = 1
+fish_style_pwd_dir_length = 0
+
+[character]
+success_symbol = "[➤ ](magenta bold)"
+error_symbol = "[➤ ](red bold)"
+
+# --- GIT (Essencial para os teus repos) ---
+[git_branch]
+symbol = "🌱 "
+style = "green bold"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "red bold"
+format = "([$all_status$ahead_behind]($style) )"
+# Mostra se tens ficheiros alterados (+), novos (?), etc.
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+# --- Linguagens (Só aparecem se houver ficheiros na pasta) ---
+[python]
+symbol = "🐍 "
+format = "[$symbol$virtualenv]($style) "
+style = "blue bold"
+
+[nodejs]
+symbol = "⬢ "
+format = "[$symbol($version)]($style) "
+style = "green bold"
+
+# --- Extras Úteis ---
+[cmd_duration]
+min_time = 2000 # Só mostra se o comando demorar mais de 2s
+format = "took [$duration](italic yellow) "
+
+# --- C / C++ ---
+[c]
+symbol = " "
+format = "[$symbol($version(-$name))]($style) "
+style = "blue bold"
+
+# --- Java ---
+[java]
+symbol = "☕ "
+format = "[$symbol($version)]($style) "
+style = "red bold"
+
+# --- C# (.NET) ---
+[dotnet]
+symbol = "󰪮 "
+format = "[$symbol($version)]($style) "
+style = "blue bold"
+
+# --- Rust (Muito comum no CachyOS/Arch) ---
+[rust]
+symbol = "🦀 "
+format = "[$symbol($version)]($style) "
+style = "orange bold"
+
+# --- Lua (Importante para as tuas configs do Neovim!) ---
+[lua]
+symbol = "🌙 "
+format = "[$symbol($version)]($style) "
+style = "blue bold"
+
+# --- Docker ---
+[docker_context]
+symbol = "🐳 "
+format = "on [$symbol$context]($style) "
+style = "blue bold italic"
