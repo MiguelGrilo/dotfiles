@@ -23,7 +23,7 @@ function updateDotFiles --description 'Sync new files and push it into GitHub'
     # Só faz commit se houver alterações para evitar erros no log
     if not git diff-index --quiet HEAD --
         git commit -m "Update DotFiles: "(date "+%Y-%m-%d %H:%M")
-        git push origin main
+        git push dotfiles master
         echo "Dotfiles updated and pushed to GitHub."
     else
         echo "Nothing to update on Github."
