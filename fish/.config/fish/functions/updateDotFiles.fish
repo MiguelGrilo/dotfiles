@@ -1,4 +1,4 @@
-function updateDotFiles --description 'Sincroniza ficheiros novos e envia atualizações para o GitHub'
+function updateDotFiles --description 'Sync new files and push it into GitHub'
     # 1. Garantir que as pastas existem no repositório
     mkdir -p ~/dotfiles/fish/.config/fish/functions
     mkdir -p ~/dotfiles/starship/.config
@@ -24,11 +24,10 @@ function updateDotFiles --description 'Sincroniza ficheiros novos e envia atuali
     if not git diff-index --quiet HEAD --
         git commit -m "Update DotFiles: "(date "+%Y-%m-%d %H:%M")
         git push origin main
-        echo "✅ Dotfiles atualizados e enviados para o GitHub!"
+        echo "Dotfiles updated and pushed to GitHub."
     else
-        echo " Nada para atualizar no GitHub."
+        echo "Nothing to update on Github."
     end
     
-    # Voltar para a pasta anterior
     cd -
 end
