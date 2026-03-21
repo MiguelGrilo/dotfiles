@@ -10,12 +10,15 @@ function updateDotFiles --description 'Sync new files and push it into GitHub'
     for file in ~/.config/fish/functions/*.fish
         if not test -L $file
             mv $file ~/dotfiles/fish/.config/fish/functions/
-            echo "Nova função detectada e movida: "(basename $file)
+            echo "» New function detected and moved:      "(basename $file)
         end
     end
     
     # 3. Atualizar os links do Stow (apenas se houver ficheiros novos)
     cd ~/dotfiles
+    echo "» Syncing with GitHub"
+    git pull dotfiles master --rebase
+    echo "» Updating symbolic links"
     stow --restow fish starship fastfetch nvim
     
     # 4. Git Push automático
@@ -24,9 +27,9 @@ function updateDotFiles --description 'Sync new files and push it into GitHub'
     if not git diff-index --quiet HEAD --
         git commit -m "Update DotFiles: "(date "+%Y-%m-%d %H:%M")
         git push dotfiles master
-        echo "Dotfiles updated and pushed to GitHub."
+        echo "» Dotfiles updated and pushed to GitHub."
     else
-        echo "Nothing to update on Github."
+        echo "» Nothing to update on Github."
     end
     
     cd -
