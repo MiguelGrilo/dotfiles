@@ -1,3 +1,3 @@
 function fastfetch
-    command fastfetch --config ~/.config/fastfetch/config2.jsonc $argv
+    command fastfetch --config ~/.config/fastfetch/configHollowKnight.jsonc $argv
 end
