@@ -16,8 +16,22 @@ function updateDotFiles --description 'Sync new files and push it into GitHub'
     
     # 3. Atualizar os links do Stow (apenas se houver ficheiros novos)
     cd ~/dotfiles
+    
+    git add .
+    if not git diff-index --quiet HEAD --
+        echo "» Saving local changes..."
+        git stash
+        set stashed 1
+    end
+
     echo "» Syncing with GitHub"
     git pull dotfiles master --rebase
+
+    if test "$stashed" = "1"
+        echo "» Getting local changes back..."
+        git stash pop
+    end
+
     echo "» Updating symbolic links"
     stow --restow fish starship fastfetch nvim
     
