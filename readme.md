@@ -77,8 +77,8 @@ yay -S ansel
 sudo pacman -S texlive-full texstudio texlive-langportuguese
 
 # Leitores de Livros/Manga e Markdown
-sudo pacman -S foliate arianna
-yay -S koodo-reader-bin thorium-reader-bin z-library-bin marktext-bin
+sudo pacman -S arianna
+yay -S koodo-reader-bin z-library-bin marktext-bin
 ```
 
 # 7. Internet, Comunicação e Jogos
