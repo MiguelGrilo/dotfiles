@@ -22,7 +22,7 @@ sudo pacman -S nvidia-cachyos nvidia-dkms nvidia-open-dkms cuda cudnn
 
 ```
 # Shell, Prompt e Ferramentas Modernas
-sudo pacman -S fish starship figlet fastfetch htop bat eza zoxide fzf
+sudo pacman -S fish starship figlet fastfetch htop bat eza zoxide fzf chafa imagemagick
 sudo pacman -S ttf-jetbrains-mono-nerd
 
 # Utilitários Adicionais
