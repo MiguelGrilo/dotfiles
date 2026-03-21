@@ -1,15 +1,15 @@
 {
     "logo": {
         "type": "auto",
-        "source": "/home/miguelgrilo/.config/fastfetch/HollowKnight3.png",
+        "source": "/home/miguelgrilo/.config/fastfetch/HollowKnight.png",
         "color": {
             "1": "blue"
         },
         "height": 20,
         "width": 40,
         "padding": {
-            "top": 4,
-            "left": 3
+            "top": 2,
+            "left": 1
         }
     },
     "modules": [
