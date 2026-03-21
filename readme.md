@@ -43,6 +43,12 @@ yay -S gitkraken-bin
 
 # Language Servers (LSP)
 sudo pacman -S bash-language-server yaml-language-server dockerfile-language-server eslint-lsp ocaml-lsp
+
+# Docker
+wget https://download.docker.com/linux/static/stable/x86_64/docker-29.2.1.tgz -qO- | tar xvfz - docker/docker --strip-components=1
+sudo cp -rp ./docker /usr/local/bin/ && rm -r ./docker
+sudo pacman -U ./docker-desktop-x86_64.pkg.tar.zst
+systemctl --user enable docker-desktop
 ```
 
 # 4. Áudio e Multimédia
@@ -60,7 +66,8 @@ yay -S stremio-bin
 # 5. Imagem e Gráficos
 
 ```
-sudo pacman -S krita digikam rawtherapee
+sudo pacman -S krita digikam rawtherapee darktable
+yay -S ansel
 ```
 
 # 6. Produtividade, Leitura e Documentação
@@ -70,7 +77,7 @@ sudo pacman -S krita digikam rawtherapee
 sudo pacman -S texlive-full texstudio texlive-langportuguese
 
 # Leitores de Livros/Manga e Markdown
-sudo pacman -S calibre foliate arianna
+sudo pacman -S foliate arianna
 yay -S koodo-reader-bin thorium-reader-bin z-library-bin marktext-bin
 ```
 
