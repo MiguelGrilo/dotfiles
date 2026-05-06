@@ -7,3 +7,6 @@ end
 
 # OpenClaw Completion
 source "/home/miguelgrilo/.openclaw/completions/openclaw.fish"
+pyenv init - | source
+
+export TERMINAL="kitty"
